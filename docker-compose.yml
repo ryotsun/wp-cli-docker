@@ -1,20 +1,20 @@
 version: '3'
 
 services:
-  mysql:
+  wp-mysql:
     build: mysql
-    container_name: mysql
+    container_name: wp-mysql
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: password
-  cli:
+  wp-cli:
     build: cli
-    container_name: cli
+    container_name: wp-cli
     depends_on:
-      - mysql
+      - wp-mysql
     environment:
-      WP_CLI_TEST_DBHOST: mysql
+      WP_CLI_TEST_DBHOST: wp-mysql
     volumes:
       - ~/wp-cli:/home/cli
     restart: always
