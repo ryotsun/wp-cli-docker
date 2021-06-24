@@ -16,5 +16,5 @@ services:
     environment:
       WP_CLI_TEST_DBHOST: wp-mysql
     volumes:
-      - ~/wp-cli:/home/cli
+      - ~/wp-cli:/home/cli/wp-cli
     restart: always
