@@ -15,6 +15,11 @@ services:
       - wp-mysql
     environment:
       WP_CLI_TEST_DBHOST: wp-mysql
+      WP_CLI_TEST_DBROOTUSER: root
+      WP_CLI_TEST_DBROOTPASS: password
+      WP_CLI_TEST_DBUSER: wp_cli_test
+      WP_CLI_TEST_DBPASS: password1
+    tty: true
     volumes:
       - ~/wp-cli:/home/cli/wp-cli
     restart: always
